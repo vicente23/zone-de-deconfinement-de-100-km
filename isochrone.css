@@ -88,6 +88,7 @@ label {
 
 /* DEBUT PANEL */
 /* Panel */
+
 .collapse-sidepanel {
   position: absolute;
   top: 1.2%; 
@@ -102,16 +103,82 @@ label {
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
 }
 
-#collapse-sidepanel-main-title {
-  font-family: Roboto;
-  font-weight: bold;
-  font-size: 1.5vw;
-  text-align: center;
-  margin: 6px;
-  /* margin-top: 9px; */
-  color: rgb(71, 71, 71);
-  z-index: 1;
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) 
+{
+  #collapse-sidepanel-main-title {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 5px;
+    text-align: center;
+    margin: 6px;
+    /* margin-top: 9px; */
+    color: rgb(71, 71, 71);
+    z-index: 1;
+  }
 }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) 
+{
+  #collapse-sidepanel-main-title {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 5px;
+    text-align: center;
+    margin: 6px;
+    /* margin-top: 9px; */
+    color: rgb(71, 71, 71);
+    z-index: 1;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) 
+{
+  #collapse-sidepanel-main-title {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 11px;
+    text-align: center;
+    margin: 6px;
+    /* margin-top: 9px; */
+    color: rgb(71, 71, 71);
+    z-index: 1;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) 
+{
+  #collapse-sidepanel-main-title {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    margin: 6px;
+    /* margin-top: 9px; */
+    color: rgb(71, 71, 71);
+    z-index: 1;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) 
+{
+  #collapse-sidepanel-main-title {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 19px;
+    text-align: center;
+    margin: 6px;
+    /* margin-top: 9px; */
+    color: rgb(71, 71, 71);
+    z-index: 1;
+  }
+}
+
 
 .geocoder {
   position: absolute;
@@ -162,21 +229,118 @@ label {
 /* FIN TEXTE IMPROVE AMELIORATION */
 
 /* DEBUT BOUTONS INFORMATIONS */
+@media only screen and (max-width: 600px) 
+{
 #button-informations {
   position: absolute;
-  top: 90%;
+  /* top: 90%; */
+  bottom: 7%;
+  left: 2%;
+  background: url('img/info.svg');
+  background-size: contain; 
+  background-size: 105%;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-color: rgb(51, 51, 51);
+  border-width: 0px;
+  border-radius: 70px;
+  border-color: #ffffff;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+  width: 21px;
+  height: 21px;
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) 
+{
+#button-informations {
+  position: absolute;
+  /* top: 92%; */
+  bottom: 5%;
+  left: 1.3%;
+  background: url('img/info.svg');
+  background-size: contain; 
+  background-size: 105%;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-color: rgb(51, 51, 51);
+  border-width: 0px;
+  border-radius: 70px;
+  border-color: #ffffff;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+  width: 21px;
+  height: 21px;
+}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) 
+{
+#button-informations {
+  position: absolute;
+  /* top: 93%; */
+  bottom: 5%;
   left: 1%;
   background: url('img/info.svg');
   background-size: contain; 
   background-size: 105%;
   background-position: center; 
   background-repeat: no-repeat;
-  padding: 14px;
   background-color: rgb(51, 51, 51);
   border-width: 0px;
   border-radius: 70px;
   border-color: #ffffff;
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+  width: 21px;
+  height: 21px;
+}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) 
+{
+#button-informations {
+  position: absolute;
+  /* top: 92%; */
+  bottom: 5%;
+  left: 1%;
+  background: url('img/info.svg');
+  background-size: contain; 
+  background-size: 105%;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-color: rgb(51, 51, 51);
+  border-width: 0px;
+  border-radius: 70px;
+  border-color: #ffffff;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+  width: 21px;
+  height: 21px;
+}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) 
+{
+#button-informations {
+  position: absolute;
+  /* top: 90%; */
+  bottom: 5%;
+  left: 0.5%;
+  background: url('img/info.svg');
+  background-size: contain; 
+  background-size: 105%;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-color: rgb(51, 51, 51);
+  border-width: 0px;
+  border-radius: 70px;
+  border-color: #ffffff;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+  width: 21px;
+  height: 21px;
+}
 }
 
 #button-informations:focus {

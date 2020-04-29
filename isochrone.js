@@ -24,15 +24,6 @@ const map = new mapboxgl.Map({
 map.addControl(new mapboxgl.NavigationControl());
 
 
-// Add Geolocate control to the map : déplacement de la carte vers sa position
-map.addControl(new mapboxgl.GeolocateControl({
-  positionOptions: {
-    enableHighAccuracy: true
-  },
-  trackUserLocation: true
-}));
-
-
 // Change the background map
 var layerList = document.getElementById('dropdown-menu'); // Récupération des éléments par id dans la div dropdown-menu
 var inputs = layerList.getElementsByTagName('input'); // Récupération des éléments par nom 
