@@ -89,7 +89,7 @@ map.on('load', function () {
 
     // Turf buffer 100 km autour du point de l'adresse géolocalisée
     var point = turf.point([lon, lat]);
-    var buffered = turf.buffer(point, 100, {units: 'kilometers'});
+    var buffered = turf.buffer(point, 144, {units: 'kilometers'});
 
     // buff = turf.featureCollection([buffered]);
     // console.log(buffered);
