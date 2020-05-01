@@ -156,6 +156,43 @@ label {
   }
   
 /* Dropdown Content */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) 
+{
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      min-width: 110px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 10px;
+      left:-220%;
+      top: 1%;
+      font-size: 11px;
+    } 
+  }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) 
+{
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 125px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+    left:-260%;
+    top: 1%;
+    font-size: 13px;
+  } 
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) 
+{
 .dropdown-content {
     display: none;
     position: absolute;
@@ -164,10 +201,42 @@ label {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 10px;
-    left:-203%;
+    left:-360%;
     top: 1%;
   } 
+}
 
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) 
+{
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+    left:-360%;
+    top: 1%;
+  } 
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) 
+{
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+    left:-323%;
+    top: 1%;
+  } 
+}
 /* Dropdown Content List */
 .dropdown-content-list {
     padding: 5px 0px 10px 10px;
@@ -245,8 +314,8 @@ label {
   position: absolute;
   top: 1.2%; 
   left: 0.8%;
-  width: 36%;
-  height: 8%;
+  width: 50%;
+  height: 10%;
   z-index: 1;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 10px;
@@ -261,7 +330,7 @@ label {
   position: absolute;
   top: 1.2%; 
   left: 0.8%;
-  width: 33%;
+  width: 45%;
   height: 9%;
   z-index: 1;
   background-color: rgba(255, 255, 255, 1);
@@ -277,7 +346,7 @@ label {
   position: absolute;
   top: 1.2%; 
   left: 0.8%;
-  width: 33%;
+  width: 40%;
   height: 9%;
   z-index: 1;
   background-color: rgba(255, 255, 255, 1);
@@ -326,7 +395,7 @@ label {
   #collapse-sidepanel-main-title {
     font-family: Roboto;
     font-weight: bold;
-    font-size: 8px;
+    font-size: 11px;
     text-align: center;
     margin: 6px;
     /* margin-top: 9px; */
@@ -341,7 +410,7 @@ label {
   #collapse-sidepanel-main-title {
     font-family: Roboto;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     margin: 9px;
     /* margin-top: 9px; */
@@ -425,7 +494,7 @@ label {
     /* min-height: 100%; */
     width: 1px;
     height: 23px;
-    font-size: 8px;
+    font-size: 9px;
 }
 }
 
@@ -444,7 +513,7 @@ label {
     /* min-height: 100%; */
     width: 1px;
     height: 28px;
-    font-size: 9px;
+    font-size: 11px;
 }
 }
 
@@ -463,7 +532,7 @@ label {
     /* min-height: 100%; */
     width: 1px;
     height: 38px;
-    font-size: 11px;
+    font-size: 12px;
 }
 }
 
@@ -500,7 +569,7 @@ label {
     min-width: 86%;
     /* min-height: 100%; */
     width: 1px;
-    height: 50px;
+    height: 41px;
     font-size: 15px;
 }
 }
@@ -548,8 +617,8 @@ label {
 {
 .mapboxgl-ctrl-geocoder--icon-search {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 8px;
+    left: 8px;
     width: 23px;
     height: 23px;
 }
@@ -566,6 +635,57 @@ label {
     height: 25px;
 } */
 /* FIN Mapbox icone search geocodeur */
+
+/* DEBUT Mapbox Rechercher une adresse */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) 
+{
+  .mapboxgl-ctrl-geocoder--input {
+    height: 22px;
+    padding: 2px 25px;
+    width: auto;
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) 
+{
+  .mapboxgl-ctrl-geocoder--input {
+    height: 28px;
+    padding: 6px 30px;
+    width: auto;
+}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) 
+{
+  .mapboxgl-ctrl-geocoder--input {
+    height: 36px;
+    padding: 6px 35px;
+}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) 
+{
+  .mapboxgl-ctrl-geocoder--input {
+    height: 38px;
+    padding: 6px 35px;
+}
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) 
+{
+  .mapboxgl-ctrl-geocoder--input {
+    height: 38px;
+    padding: 6px 35px;
+}
+}
+
+/* FIN Mapbox Rechercher une adresse */
 /* FIN PANEL */
 
 
