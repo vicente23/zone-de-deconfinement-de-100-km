@@ -5,7 +5,7 @@ const map = new mapboxgl.Map({
   style: 'mapbox://styles/mapbox/outdoors-v11', // stylesheet location
   center: [2.6, 46.33], // starting position [lng, lat]
   zoom: 5, // starting zoom
-  minZoom: 2, // zoom minimum
+  minZoom: 3, // zoom minimum
   maxZoom: 24, // zoom maximum
   pitch: 0, // Inclinaison
   bearing: 0, // Rotation
@@ -52,11 +52,13 @@ document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 // Geocoding and isochrone
 map.on('load', function () {
 
+  // Essai de suppression d'un point de géolocalisation déjà existant
   try {
     map.removeLayer('point');
     map.removeSource('point');
   } catch (e) {};
   
+  // Source du point de l'adresse géolocalisée
   map.addSource('single-point', {
     type: 'geojson',
     data: {
@@ -64,7 +66,8 @@ map.on('load', function () {
       features: []
     }
   });
-
+  
+  // Ajout du point de l'adresse géolocalisée
   map.addLayer({
     id: 'point',
     source: 'single-point',
@@ -76,50 +79,33 @@ map.on('load', function () {
   });
 
 
-
+  // Géolocalisation d'une adresse
   geocoder.on('result', function (e) {
     map.getSource('single-point').setData(e.result.geometry);
 
-
-    var urlBase = 'https://api.mapbox.com/isochrone/v1/mapbox/';
+    // Longitude et Latitude du poitn géolocalisé
     var lon = e.result.geometry.coordinates[0];
     var lat = e.result.geometry.coordinates[1];
-    var profile = 'walking';
-    var minutes = 12;
 
+    // Turf buffer 100 km autour du point de l'adresse géolocalisée
     var point = turf.point([lon, lat]);
-    var buffered = turf.buffer(point, 1, {units: 'kilometers'});
-    // var buffered_geojson = buffered.getGeoJSON();
-    console.log(buffered);
-    
-    
-    
+    var buffered = turf.buffer(point, 100, {units: 'kilometers'});
 
-    // Create a function that sets up the Isochrone API query then makes an Ajax call
-    function getIso() {
-      var query = urlBase + profile + '/' + lon + ',' + lat + '?contours_minutes=' + minutes + '&polygons=true&access_token=' + mapboxgl.accessToken;
+    // buff = turf.featureCollection([buffered]);
+    // console.log(buffered);
+    // console.log(buffered.geometry);
+    // console.log(buffered.geometry.coordinates[0]);
 
-      $.ajax({
-        method: 'GET',
-        url: query
-      }).done(function (data) {
-        // Set the 'iso' source's data to what's returned by the API query
-        map.getSource('iso').setData(data);
-      })
-    };
-
-    var marker = new mapboxgl.Marker({
-      'color': '#314ccd'
-    });
-
+    // Suppression d'un buffer déjà existant
     try {
-      map.removeLayer('isoLayer');
-      map.removeSource('iso');
+      map.removeLayer('buffer_100kmLayer');
+      map.removeSource('buffer_100km');
     } catch (e) {
   
     };
 
-    map.addSource('iso', {
+    // Source du buffer
+    map.addSource('buffer_100km', {
       type: 'geojson',
       data: {
         "type": 'FeatureCollection',
@@ -127,21 +113,27 @@ map.on('load', function () {
       }
     });
 
+    // Ajout des coordonnées du buffer 
+    map.getSource('buffer_100km').setData(buffered.geometry);
+
+    // Ajout du buffer
     map.addLayer({
-      'id': 'isoLayer',
+      'id': 'buffer_100kmLayer',
       'type': 'fill',
-      // Use "iso" as the data source for this layer
-      'source': 'iso',
+      'source': 'buffer_100km',
       'layout': {},
       'paint': {
-        // The fill color for the layer is set to a light purple
         'fill-color': '#5a3fc0',
         'fill-opacity': 0.3
       }
     }, "poi-label");
 
-    // Make the API call
-    getIso();
+    // Zoom sur la bounding box
+    var bounds = turf.bbox(buffered.geometry);
+    // console.log(bounds);
+    map.fitBounds(bounds, {zoom:7});
+      
+    
 
   });
 });
